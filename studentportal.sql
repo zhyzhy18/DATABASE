@@ -6,13 +6,13 @@ CREATE TABLE  students (
     birthdate DATE NOT NULL,
     gender ENUM('Male', 'Female', 'Other') NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
-    mobile_number VARCHAR(15) UNIQUE NOT NULL,
+    mobile_number INT(11) UNIQUE NOT NULL,
     street_address VARCHAR(100) NOT NULL,
     city VARCHAR(50) NOT NULL,
     state VARCHAR(50) NOT NULL,
-    zip_code VARCHAR(10) NOT NULL,
+    zip_code INT(4) NOT NULL,
     course VARCHAR(50) NOT NULL,
-    year_level INT CHECK (year_level BETWEEN 1 AND 6),
+    year_level INT CHECK (year_level BETWEEN 1 AND 4) NOT NULL,
     password VARCHAR(255) NOT NULL
 );
 
