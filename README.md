@@ -1,1 +1,0 @@
-Bakla si Sir Dhoy
