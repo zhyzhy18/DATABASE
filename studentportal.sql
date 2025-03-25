@@ -1,29 +1,26 @@
-CREATE TABLE  students (
-    student_id INT PRIMARY KEY,
-    first_name VARCHAR(50) NOT NULL,
-    middle_name VARCHAR(50),
-    last_name VARCHAR(50) NOT NULL,
-    birthdate DATE NOT NULL,
-    gender ENUM('Male', 'Female', 'Other') NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    mobile_number INT(11) UNIQUE NOT NULL,
-    street_address VARCHAR(100) NOT NULL,
-    city VARCHAR(50) NOT NULL,
-    state VARCHAR(50) NOT NULL,
-    zip_code INT(4) NOT NULL,
-    course VARCHAR(50) NOT NULL,
-    year_level INT CHECK (year_level BETWEEN 1 AND 4) NOT NULL,
-    password VARCHAR(255) NOT NULL
+create database studentportal;
+
+use studentportal;
+create table student (
+	student_id int primary key not null unique,
+	first_name varchar(50) not null,
+	middle_name varchar(50),
+	last_name varchar(50) not null,
+	birthdate date not null,
+	gender ENUM('male', 'female', 'other') not null,
+	email varchar(50) not null unique,
+	mobile_number varchar(11) not null unique,
+	street_address varchar(255) not null,
+	city varchar(20) not null,
+	state varchar(20) not null,
+	zip_code varchar(7) not null,
+	course varchar(10) not null,
+	year_level int not null,
+	password varchar(255) not null
 );
 
-INSERT INTO students (student_id, first_name, middle_name, last_name, birthdate, gender, email, mobile_number, street_address, city, state, zip_code, course, year_level, password)
-VALUES (1, 'John', 'A.', 'Doe', '2002-05-15', 'Male', 'john.doe@example.com', '09123456789', '123 Street', 'Metro City', 'Metro State', '1000', 'BSIT', 2, 'hashed_password_here');
 
+insert into student (student_id, first_name, middle_name, last_name, birthdate, gender, email, mobile_number, street_address, city, state, zip_code, course, year_level, password)
+values (20251234, "john", "doe", "bong", "2024-12-12", "male", "myname@example.com", "0912345779", "Peke Street", "Malabon", "Manila", "1234", "BSIS", 4, "Qwerty12345");
 
-SELECT 
-    gender
-FROM
-    students;
-    
-    
-    
+select * from student;
